@@ -21,7 +21,7 @@ namespace aspnet_app.Controllers
                 Id = 1,
                 Title = "Oil Change",
                 Description = "Change the oil in your car",
-                Cost = 20.00m
+                Cost = 20.00
             };
 
             return View(service);
