@@ -5,18 +5,24 @@ namespace aspnet_app.Controllers
 {
     public class ServicesController : Controller
     {
+        [ViewData]
+        public string PageTitle { get; set; }
+
         public IActionResult Index()
         {
             return View();
         }
-
         public IActionResult Details()
         {
-            var service = new VehicleService();
-            service.Id = 1;
-            service.Title = "Oil Change";
-            service.Description = "Change the oil in your vehicle";
-            service.Cost = 50.00m;
+            PageTitle = "Service Details";
+
+            var service = new VehicleService
+            {
+                Id = 1,
+                Title = "Oil Change",
+                Description = "Change the oil in your car",
+                Cost = 20.00m
+            };
 
             return View(service);
         }
